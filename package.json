@@ -2,9 +2,11 @@
   "name": "sass-class-prefix",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "mocha --recursive test"
+    "prepublish": "mkdir -p dist && babel index.js -o dist/index.js",
+    "build": "mkdir -p dist && babel index.js -o dist/index.js",
+    "test": "mocha --require babel-core/register --recursive test"
   },
   "keywords": [],
   "author": "joe-re",
@@ -18,6 +20,10 @@
     "npm": ">=2.0.0"
   },
   "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.9.0",
+    "babel-core": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
     "mocha": "^2.4.5",
     "power-assert": "^1.4.1"
   }
