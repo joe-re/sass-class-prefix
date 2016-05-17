@@ -1,6 +1,6 @@
 {
   "name": "sass-class-prefix",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Parse sass file and add any prefix to scss(sass)'s class selector",
   "main": "dist/index.js",
   "repository": {
