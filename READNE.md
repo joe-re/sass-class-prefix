@@ -1,5 +1,6 @@
 # sass-class-prefix
 
+[![Build Status](https://travis-ci.org/joe-re/sass-class-prefix.svg?branch=master)](https://travis-ci.org/joe-re/sass-class-prefix)
 Parse sass file and add any prefix to scss(sass)'s class selector.
 
 
