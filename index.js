@@ -1,5 +1,6 @@
 const { parse, stringify } = require('scss-parser');
 const createQueryWrapper = require('query-ast');
+const fs = require('fs');
 
 const addPrefix = (sassText, prefix) => {
   const ast = parse(sassText);
@@ -12,6 +13,14 @@ const addPrefix = (sassText, prefix) => {
   return stringify($().get(0));
 };
 
-module.exports.parse = (prefix, text) => {
-  return addPrefix(prefix, text);
+module.exports.parse = (text, prefix) => {
+  return addPrefix(text, prefix);
+};
+
+module.exports.parseFile = (filePath, prefix) => {
+  if (fs.lstatSync(filePath).isFile()) {
+    return addPrefix(fs.readFileSync(filePath, 'utf8'), prefix);
+  } else {
+    throw new Error(`Invalid arguments: ${filePath} isn't file path.`);
+  }
 };
