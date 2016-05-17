@@ -4,9 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --recursive test"
   },
   "keywords": [],
-  "author": "",
-  "license": "MIT"
+  "author": "joe-re",
+  "license": "MIT",
+  "dependencies": {
+    "query-ast": "^1.0.0",
+    "scss-parser": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=4.0.0",
+    "npm": ">=2.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.4.5",
+    "power-assert": "^1.4.1"
+  }
 }
